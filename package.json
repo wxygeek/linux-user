@@ -1,0 +1,32 @@
+{
+  "name": "linux-user",
+  "version": "0.0.1",
+  "description": "Node package for Linux user and group control, like: useradd, passwd, chage, usermod, userdel, groupadd, groupmod, groupdel, gpasswd...",
+  "author": {
+    "name": "GKuChan",
+    "email": "gkuchan_root@outlook.com"
+  },
+  "keywords": [
+    "linux",
+    "user",
+    "ACL",
+    "useradd",
+    "passwd",
+    "chage",
+    "usermod",
+    "userdel",
+    "groupadd",
+    "groupmod",
+    "groupdel",
+    "gpasswd"
+  ],
+  "devDependencies": {
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GKuChan/linux-user.git"
+  },
+  "dependencies": {
+  }
+}
