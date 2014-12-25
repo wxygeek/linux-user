@@ -1,7 +1,7 @@
 {
   "name": "linux-user",
   "version": "0.0.1",
-  "description": "Node package for Linux user and group control, like: useradd, passwd, chage, usermod, userdel, groupadd, groupmod, groupdel, gpasswd...",
+  "description": "Node module for Linux user and group control",
   "author": {
     "name": "GKuChan",
     "email": "gkuchan_root@outlook.com"
@@ -32,6 +32,7 @@
     "url": "git@github.com:GKuChan/linux-user.git"
   },
   "dependencies": {
-    "is-root": "^1.0.0"
+    "is-root": "^1.0.0",
+    "lru-cache": "^2.5.0"
   }
 }

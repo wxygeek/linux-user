@@ -1,5 +1,6 @@
 linux-user
 ==========
 
-A Linux user and group control module, like: useradd, passwd, chage, usermod, userdel, groupadd, groupmod, groupdel, gpasswd...
+Node module for Linux user and group control.
 
+They do what you think.
