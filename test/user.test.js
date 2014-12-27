@@ -7,6 +7,13 @@ var testPassword = 'linuxPasswordTest';
 var testGroupname = 'linuxgrouptest';
 
 describe('user.js', function () {
+  describe('validateUsername', function () {
+    it('should validate username ok', function () {
+      linuxUser.validateUsername('/$#%&^%$~!|}|23').should.be.false;
+    });
+  });
+
+
   describe('getUsers', function () {
     it('should get users ok', function (done) {
       linuxUser.getUsers(function (err, users) {
@@ -22,7 +29,7 @@ describe('user.js', function () {
 
   describe('Invalid username', function () {
     it('should throw Error', function (done) {
-      linuxUser.addUser('/$#%&^%$~!|}|23', function (err) {
+      linuxUser.addUser('/$#%&^%$~!|}|23', function (err, user) {
         err.should.be.an.Error;
         err.message.should.equal('Invalid username');
         done();
@@ -50,10 +57,11 @@ describe('user.js', function () {
           return done(err);
         }
         num = users.length;
-        linuxUser.addUser(testUsername, function (err, content) {
+        linuxUser.addUser(testUsername, function (err, user) {
           if(err) {
             return done(err);
           }
+          user.username.should.equal(testUsername);
           linuxUser.getUsers(function (err, users) {
             if(err) {
               return done(err);
@@ -98,10 +106,11 @@ describe('user.js', function () {
           return done(err);
         }
         num = groups.length;
-        linuxUser.addGroup(testGroupname, function (err, content) {
+        linuxUser.addGroup(testGroupname, function (err, group) {
           if(err) {
             return done(err);
           }
+          group.groupname.should.equal(testGroupname);
           linuxUser.getGroups(function (err, groups) {
             if(err) {
               return done(err);

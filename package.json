@@ -1,7 +1,7 @@
 {
   "name": "linux-user",
-  "version": "0.0.1",
-  "description": "Node module for Linux user and group control",
+  "version": "0.1.0",
+  "description": "Node module for Linux user and group control.",
   "author": {
     "name": "GKuChan",
     "email": "gkuchan_root@outlook.com"
