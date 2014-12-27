@@ -21,7 +21,7 @@ Usage
 
 * add Linux user
 
-```
+```js
 var linuxUser = require('linux-user');
 
 linuxUser.addUser('gkuchan', function (err, user) {
@@ -42,7 +42,7 @@ linuxUser.addUser('gkuchan', function (err, user) {
 ```
 * get users
 
-```
+```js
 var linuxUser = require('linux-user');
 
 linuxUser.getUsers(function (err, users) {
