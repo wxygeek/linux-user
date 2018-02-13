@@ -1,11 +1,16 @@
 {
   "name": "linux-user",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Node module for Linux user and group control.",
-  "author": {
-    "name": "GKuChan",
-    "email": "gkuchan_root@outlook.com"
-  },
+  "author": [
+      {
+        "name": "GKuChan",
+        "email": "gkuchan_root@outlook.com"
+      },{
+        "name": "William Mantly",
+        "email": "wmantly@gmail.com"
+      }
+  ],
   "keywords": [
     "linux",
     "user",
@@ -29,7 +34,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:GKuChan/linux-user.git"
+    "url": "https://github.com/wmantly/linux-user.git"
   },
   "dependencies": {
     "is-root": "^1.0.0",
