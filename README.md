@@ -89,6 +89,9 @@ linuxUser.getUsers(function (err, users) {
 * linuxUser.getUserInfo(username, callback)
 	* username String
 	* callback function(err, userInfo)
+* linuxUser.getUserGroups(username, callback)
+	* username String
+	* callback function(err, groups)
 * linuxUser.setPassword(username, password, callback)
 	* username String
 	* password String
