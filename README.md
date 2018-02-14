@@ -6,6 +6,8 @@ Use Node to manage Linux user easily. All APIs do what you think.
 
 **The module must be running on Linux and as root user !**
 
+[![NPM](https://nodei.co/npm/linux-sys-user.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/linux-sys-user/)
+
 Notes
 ==========
 This is a fork of [wxygeek](https://github.com/wxygeek) abandoned [linux-user](https://github.com/wxygeek/linux-user) project.
