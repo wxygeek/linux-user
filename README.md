@@ -8,7 +8,7 @@ Use Node to manage Linux user easily. All APIs do what you think.
 
 Notes
 ==========
-This is a fork of (wxygeek)[https://github.com/wxygeek] abandoned (linux-user)[https://github.com/wxygeek/linux-user] project.
+This is a fork of [wxygeek](https://github.com/wxygeek) abandoned [linux-user](https://github.com/wxygeek/linux-user) project.
 
 Installation
 =============
@@ -143,8 +143,7 @@ console.log(user);
 
 * linuxUser.validateUsername(username)
 	* return boolen
-	
-	check a string is a valid linux username or not
+	  check a string is a valid linux username or not
 
 * linuxUser.verifySSHKey(key, callback)
 	* key String
