@@ -1,8 +1,5 @@
 linux-user
 ==========
-
-[![NPM](https://nodei.co/npm/linux-user.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/linux-user/)
-
 Node module for Linux user and group control.
 
 Use Node to manage Linux user easily. All APIs do what you think.
