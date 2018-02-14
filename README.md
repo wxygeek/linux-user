@@ -12,7 +12,7 @@ Use Node to manage Linux user easily. All APIs do what you think.
 Installation
 =============
 
-`$ npm install linux-user --save`
+`$ npm install wmantly/linux-user --save`
 
 Usage
 =============
@@ -118,7 +118,11 @@ linuxUser.getUsers(function (err, users) {
 	* return boolen
 	
 	check a string is a valid linux username or not
-	
+
+* linuxUser.verifySSHKey(key, callback)
+	* key String
+	* callback function(err, key info)
+
 ### License
 
 MIT
