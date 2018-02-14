@@ -6,10 +6,14 @@ Use Node to manage Linux user easily. All APIs do what you think.
 
 **The module must be running on Linux and as root user !**
 
+Notes
+==========
+This is a fork of (wxygeek)[https://github.com/wxygeek] abandoned (linux-user)[https://github.com/wxygeek/linux-user] project.
+
 Installation
 =============
 
-`$ npm install wmantly/linux-user --save`
+`$ npm install linux-sys-user --save`
 
 Usage
 =============
@@ -19,7 +23,7 @@ Usage
 * add Linux user
 
 ```js
-var linuxUser = require('linux-user');
+var linuxUser = require('linux-sys-user');
 
 linuxUser.addUser('gkuchan', function (err, user) {
   if(err) {
@@ -40,7 +44,7 @@ linuxUser.addUser('gkuchan', function (err, user) {
 * get users
 
 ```js
-var linuxUser = require('linux-user');
+var linuxUser = require('linux-sys-user');
 
 linuxUser.getUsers(function (err, users) {
   if(err) {
@@ -72,6 +76,32 @@ linuxUser.getUsers(function (err, users) {
   //   ------------------------------------------
   });
 ```
+
+### Promises
+
+This project works with promises right out of the box! Just grade the promise function
+
+```js
+var linuxUser = require('linux-sys-user').promise;
+```
+
+This will work with `.then()`, `.catch()` and the `async`/`await` pattern.
+
+```js
+
+let user = await addUser('gkuchan');
+console.log(user);
+  // ------------------------------------------
+  // { username: 'gkuchan',
+  //   password: 'x',
+  //   uid: 1001,
+  //   gid: 1001,
+  //   fullname: '',
+  //   homedir: '/home/gkuchan',
+  //   shell: '/usr/sbin/nologin' }
+  // ------------------------------------------
+
+``` 
 
 ### Core APIs
 

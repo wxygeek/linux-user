@@ -1,15 +1,16 @@
 {
-  "name": "linux-user",
-  "version": "0.3.1",
+  "name": "linux-sys-user",
+  "version": "0.4.0",
   "description": "Node module for Linux user and group control.",
   "author": [
-      {
-        "name": "William Mantly",
-        "email": "wmantly@gmail.com"
-      },{
-        "name": "GKuChan",
-        "email": "gkuchan_root@outlook.com"
-      }
+    {
+      "name": "William Mantly",
+      "email": "wmantly@gmail.com"
+    },
+    {
+      "name": "GKuChan",
+      "email": "gkuchan_root@outlook.com"
+    }
   ],
   "keywords": [
     "linux",
@@ -37,6 +38,7 @@
     "url": "https://github.com/wmantly/linux-user.git"
   },
   "dependencies": {
+    "bluebird": "^3.5.1",
     "is-root": "^1.0.0",
     "lru-cache": "^2.5.0"
   }
