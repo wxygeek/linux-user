@@ -108,32 +108,42 @@ console.log(user);
 * linuxUser.addUser(username, callback)
 	* username String
 	* callback function(err, userInfo)
+	
 * linuxUser.removeUser(username, callback)
 	* username String
 	* callback function(err)
+	
 * linuxUser.getUsers(callback)
 	* callback function(err, usersInfo)
+	
 * linuxUser.getUserInfo(username, callback)
 	* username String
 	* callback function(err, userInfo)
+	
 * linuxUser.getUserGroups(username, callback)
 	* username String
 	* callback function(err, groups)
+	
 * linuxUser.setPassword(username, password, callback)
 	* username String
 	* password String
 	* callback function(err)
+	
 * linuxUser.addGroup(groupname, callback)
 	* groupname String
 	* callback function(err, groupInfo)
+	
 * linuxUser.removeGroup(groupname, callback)
 	* groupname String
 	* callback function(err)
+	
 * linuxUser.getGroups(callback)
 	* callback function(err, groupsInfo)
+	
 * linuxUser.getGroupInfo(groupname, callback)
 	* groupname String
 	* callback function(err, groupInfo)
+	
 * linuxUser.addUserToGroup(username, groupname, callback)
 	* username String
 	* groupname String
@@ -143,16 +153,19 @@ console.log(user);
 
 * linuxUser.validateUsername(username)
 	* return boolen
-	  check a string is a valid linux username or not
+	* check a string is a valid linux username or not
+
 
 * linuxUser.verifySSHKey(key, callback)
 	* key String
 	* callback function(err, key info)
-	
+
+
 * linuxUser.addSSHtoUser(user, key, callback)
 	* user String
 	* key String
 	* callback function(err, true)
+
 
 ### License
 
