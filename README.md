@@ -119,6 +119,11 @@ linuxUser.getUsers(function (err, users) {
 * linuxUser.verifySSHKey(key, callback)
 	* key String
 	* callback function(err, key info)
+	
+* linuxUser.addSSHtoUser(user, key, callback)
+	* user String
+	* key String
+	* callback function(err, true)
 
 ### License
 
