@@ -1,5 +1,7 @@
 'use strict';
 
+require('should')
+
 var linuxUser = require('../');
 
 var testUsername = 'linuxusertest';
