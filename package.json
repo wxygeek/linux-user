@@ -1,6 +1,6 @@
 {
   "name": "linux-sys-user",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Node module for Linux user and group control.",
   "author": [
     {
