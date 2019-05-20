@@ -26,6 +26,9 @@
     "groupdel",
     "gpasswd"
   ],
+  "scripts": {
+    "test": "mocha"
+  },
   "devDependencies": {
     "istanbul": "^0.4.5",
     "jshint": "^2.5.11",
