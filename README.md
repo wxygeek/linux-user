@@ -27,7 +27,7 @@ Usage
 ```js
 var linuxUser = require('linux-sys-user');
 
-linuxUser.addUser('gkuchan', function (err, user) {
+linuxUser.addUser({username:"gkuchan", create_home:true, shell:null}, function (err, user) {
   if(err) {
     return console.error(err);
   }
@@ -91,7 +91,7 @@ This will work with `.then()`, `.catch()` and the `async`/`await` pattern.
 
 ```js
 
-let user = await addUser('gkuchan');
+let user = await addUser({username:"gkuchan", create_home:true, shell:null});
 console.log(user);
   // ------------------------------------------
   // { username: 'gkuchan',
@@ -107,8 +107,85 @@ console.log(user);
 
 ### Core APIs
 
-* linuxUser.addUser(username, callback)
-	* username String
+* linuxUser.addUser(config, callback)
+
+  This method is a front end to the `useradd` command on your system. Please
+  consult you systems man page for details on your version and implementation.
+
+	* config Object
+    
+      * `username` *String* User name of the user to be created.
+      
+      * `shell` *String* or *Null* Path to the login shell, setting `null` will
+      use `/usr/sbin/nologin` as the path.
+
+      ```
+      The name of the user's login shell. The default is to leave this
+      field blank, which causes the system to select the default login
+      shell specified by the SHELL variable in /etc/default/useradd, or
+      an empty string by default.
+      ```
+
+      * `create_home` *Boolean* `true` will create the home directory, `false`
+      will not.
+
+      * `home_dir` *String* Path to the user home directory.
+
+        ```
+        The new user will be created using HOME_DIR as the value for the
+        user's login directory. The default is to append the LOGIN name to
+        BASE_DIR and use that as the login directory name. The directory
+        HOME_DIR does not have to exist but will not be created if it is
+        missing.
+        ```
+
+      * `expiredate` *String* The date on which the user account will be disabled.
+      The date is specified in the format `YYYY-MM-DD`..
+
+      ```
+      If not specified, useradd will use the default expiry date
+      specified by the EXPIRE variable in /etc/default/useradd, or an
+      empty string (no expiry) by default.
+      ```
+
+      * `skel` *String*
+
+      ```
+      The skeleton directory, which contains files and directories to be
+      copied in the user's home directory, when the home directory is
+      created by useradd.
+
+      This option is only valid if the -m (or --create-home) option is
+      specified.
+
+      If this option is not set, the skeleton directory is defined by the
+      SKEL variable in /etc/default/useradd or, by default, /etc/skel.
+
+      If possible, the ACLs and extended attributes are copied.
+
+      ```
+      * `system` *Boolean* Create a system account.
+
+      ```
+      System users will be created with no aging information in
+      /etc/shadow, and their numeric identifiers are chosen in the
+      SYS_UID_MIN-SYS_UID_MAX range, defined in /etc/login.defs, instead
+      of UID_MIN-UID_MAX (and their GID counterparts for the creation of
+      groups).
+
+      Note that useradd will not create a home directory for such a user,
+      regardless of the default setting in /etc/login.defs (CREATE_HOME).
+      You have to specify the -m options if you want a home directory for
+      a system account to be created.
+
+      ```
+      * `selinux_user` *String* The SELinux user for the user's login.
+
+      ```
+      The default is to leave this field blank, which causes the system to select
+      the default SELinux user.
+      ```
+
 	* callback function(err, userInfo)
 	
 * linuxUser.removeUser(username, callback)

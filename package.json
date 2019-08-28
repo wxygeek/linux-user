@@ -1,6 +1,6 @@
 {
   "name": "linux-sys-user",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "Node module for Linux user and group control.",
   "author": [
     {
@@ -24,7 +24,11 @@
     "groupadd",
     "groupmod",
     "groupdel",
-    "gpasswd"
+    "gpasswd",
+    "pam",
+    "ssh-keygen",
+    "ssh",
+    "keys"
   ],
   "scripts": {
     "test": "mocha"
