@@ -31,7 +31,7 @@ describe('user.js', function () {
 
   describe('Invalid username', function () {
     it('should throw Error', function (done) {
-      linuxUser.addUser('/$#%&^%$~!|}|23', function (err, user) {
+      linuxUser.addUser({username:'/$#%&^%$~!|}|23'}, function (err, user) {
         err.should.be.an.Error;
         err.message.should.equal('Invalid username');
         done();
@@ -59,7 +59,7 @@ describe('user.js', function () {
           return done(err);
         }
         num = users.length;
-        linuxUser.addUser(testUsername, function (err, user) {
+        linuxUser.addUser({username: testUsername}, function (err, user) {
           if(err) {
             return done(err);
           }
@@ -138,7 +138,7 @@ describe('user.js', function () {
 
   describe('Other methods', function () {
     beforeEach(function (done) {
-      linuxUser.addUser(testUsername, function (err) {
+      linuxUser.addUser({username:testUsername}, function (err) {
         linuxUser.addGroup(testGroupname, done);
       });
     });
