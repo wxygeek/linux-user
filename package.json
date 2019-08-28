@@ -30,7 +30,6 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "istanbul": "^0.4.5",
     "jshint": "^2.10.2",
     "mocha": "^6.2.0",
     "should": "^13.2.3"
