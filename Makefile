@@ -20,18 +20,6 @@ test: install
 		$(MOCHA_OPTS) \
 		$(TESTS)
 
-test-cov cov: install
-	@NODE_ENV=test node \
-		node_modules/.bin/istanbul cover \
-		./node_modules/.bin/_mocha \
-		--bail \
-		-- -u exports \
-		--reporter $(REPORTER) \
-		--timeout $(TIMEOUT) \
-		--require should \
-		$(MOCHA_OPTS) \
-		$(TESTS)
-
 test-all all: install jshint test cov
 
 clean:
