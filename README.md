@@ -27,7 +27,7 @@ Usage
 ```js
 var linuxUser = require('linux-sys-user');
 
-linuxUser.addUser({username:"gkuchan", create_home:true, shell:"/bin/bash"}, function (err, user) {
+linuxUser.addUser({username:"gkuchan", create_home:true, shell:null}, function (err, user) {
   if(err) {
     return console.error(err);
   }
@@ -91,7 +91,7 @@ This will work with `.then()`, `.catch()` and the `async`/`await` pattern.
 
 ```js
 
-let user = await addUser({username:"gkuchan", create_home:true, shell:"/bin/bash"});
+let user = await addUser({username:"gkuchan", create_home:true, shell:null});
 console.log(user);
   // ------------------------------------------
   // { username: 'gkuchan',
@@ -124,7 +124,7 @@ console.log(user);
 
     * `create_home` *Boolean* `true` will create the home directory, `false`
     will not.
-    
+
     * `home_dir` *String* Path to the user home directory.
 
       ```
