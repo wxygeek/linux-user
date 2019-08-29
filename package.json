@@ -1,6 +1,6 @@
 {
   "name": "linux-sys-user",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Node module for Linux user and group control.",
   "author": [
     {
@@ -45,6 +45,5 @@
   },
   "dependencies": {
     "bluebird": "^3.5.5",
-    "lru-cache": "^5.1.1"
   }
 }
