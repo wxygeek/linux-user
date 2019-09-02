@@ -1,25 +1,34 @@
-linux-user
-==========
+# linux-user
+
+
 Node module for Linux user and group control.
 
 Use Node to manage Linux user easily. All APIs do what you think. Promise and 
-`async\await` out of the box. **Zero dependences!**
+`async\await` out of the box. ES5 support! **Zero dependences!**
 
 **The module must be running on Linux and as root user !**
 
 [![NPM](https://nodei.co/npm/linux-sys-user.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/linux-sys-user/)
 
-Notes
-==========
+## Notes
+
 This is a fork of [wxygeek](https://github.com/wxygeek) abandoned [linux-user](https://github.com/wxygeek/linux-user) project.
 
-Installation
-=============
+## Installation
 
 `$ npm install linux-sys-user --save`
 
-Usage
-=============
+
+## Testing
+
+`$ npm test`
+
+The testing libraries only work with NodeJS 6 and up.
+
+## Usage
+
+This works with your normal require and execute callback functions. Every method
+takes a callback is non-blocking.
 
 ### Examples
 
