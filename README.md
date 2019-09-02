@@ -2,7 +2,8 @@ linux-user
 ==========
 Node module for Linux user and group control.
 
-Use Node to manage Linux user easily. All APIs do what you think.
+Use Node to manage Linux user easily. All APIs do what you think. Promise and 
+`async\await` out of the box. **Zero dependences!**
 
 **The module must be running on Linux and as root user !**
 
@@ -81,11 +82,24 @@ linuxUser.getUsers(function (err, users) {
 
 ### Promises
 
-This project works with promises right out of the box! Just grade the promise function
+This project works with promises right out of the box! Just grab the promise
+function.
 
 ```js
-var linuxUser = require('linux-sys-user').promise;
+var linuxUser = require('linux-sys-user').promise();
 ```
+
+This will NodeJS's `util.promisify` by default. You can pass your own promisify
+function like, like bluebird:
+
+```js
+var bluebird = require('bluebird');
+var linuxUser = require('linux-sys-user').promise(bluebird.promisify);
+
+```
+
+** `bluebird` is NOT included with this package! ** If you are using a older
+version of NodeJS( less then 8 ) you will need something like it.
 
 This will work with `.then()`, `.catch()` and the `async`/`await` pattern.
 
@@ -139,8 +153,8 @@ console.log(user);
         missing.
         ```
 
-      * `expiredate` *String* The date on which the user account will be disabled.
-      The date is specified in the format `YYYY-MM-DD`..
+      * `expiredate` *String* The date on which the user account will be
+      disabled. The date is specified in the format `YYYY-MM-DD`..
 
       ```
       If not specified, useradd will use the default expiry date
@@ -182,8 +196,8 @@ console.log(user);
       * `selinux_user` *String* The SELinux user for the user's login.
 
       ```
-      The default is to leave this field blank, which causes the system to select
-      the default SELinux user.
+      The default is to leave this field blank, which causes the system to
+      select the default SELinux user.
       ```
 
 	* callback function(err, userInfo)
