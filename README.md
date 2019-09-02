@@ -28,7 +28,7 @@ The testing libraries only work with NodeJS 6 and up.
 ## Usage
 
 This works with your normal require and execute callback functions. Every method
-takes a callback is non-blocking.
+takes a callback and is non-blocking.
 
 ### Examples
 
