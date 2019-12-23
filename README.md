@@ -95,7 +95,7 @@ This project works with promises right out of the box! Just grab the promise
 function.
 
 ```js
-var linuxUser = require('linux-sys-user').promise();
+var linuxUser = require('linux-sys-user').promises();
 ```
 
 This will NodeJS's `util.promisify` by default. You can pass your own promisify
@@ -103,7 +103,7 @@ function like, like bluebird:
 
 ```js
 var bluebird = require('bluebird');
-var linuxUser = require('linux-sys-user').promise(bluebird.promisify);
+var linuxUser = require('linux-sys-user').promises(bluebird.promisify);
 
 ```
 
