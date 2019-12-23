@@ -11,6 +11,6 @@ if(!(process.getuid && process.getuid() === 0)) {
 }
 
 var lib = require('./lib/user');
-lib.promises = require('./lib/promise')
+lib.promise = require('./lib/promise')
 
 module.exports = lib;
