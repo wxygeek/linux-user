@@ -1,6 +1,6 @@
 {
   "name": "linux-sys-user",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Node module for Linux user and group control.",
   "author": [
     {
@@ -31,17 +31,18 @@
     "keys"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-coverage": "nyc mocha"
   },
   "devDependencies": {
-    "jshint": "^2.11.0",
+    "jshint": "^2.13.4",
     "mocha": "^7.1.1",
-    "should": "^13.2.3"
+    "should": "^13.2.3",
+    "nyc": "^15.1.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/wmantly/linux-user.git"
-  },
-  "dependencies": {}
+  }
 }
