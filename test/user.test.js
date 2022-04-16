@@ -101,11 +101,11 @@ describe('user.js', function () {
     });
 
     it('should set the login shell', function(done){
-      linuxUser.addUser({username: testUsername, shell: '/bin/fish'}, function(err, user){
+      linuxUser.addUser({username: testUsername, shell: '/bin/bash'}, function(err, user){
         if(err){
           done(err);
         }
-        user.shell.should.equal('/bin/fish')
+        user.shell.should.equal('/bin/bash')
         done();
       })
     });
