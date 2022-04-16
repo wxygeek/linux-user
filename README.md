@@ -210,7 +210,33 @@ console.log(user);
       ```
 
 	* callback function(err, userInfo)
-	
+
+* linuxUser.userExpiration(confid, callback)
+  
+  Set the user password expiration and inactivity.
+  * config object
+
+  * `lastday` LAST_DAY
+    Set the number of days since January 1st, 1970 when the password was last changed. The date may also be expressed in the format YYYY-MM-DD (or the format more commonly used in your area). **Setting this to zero will force the password to be changed on the next login**
+
+  * `expiredate` EXPIRE_DATE
+    Set the date or number of days since January 1, 1970 on which the user's account will no longer be accessible. The date may also be expressed in the format YYYY-MM-DD (or the format more commonly used in your area). A user whose account is locked must contact the system administrator before being able to use the system again. Passing the number -1 as the EXPIRE_DATE will remove an account expiration date.
+
+  * `inactive` INACTIVE
+    Set the number of days of inactivity after a password has expired before the account is locked. The INACTIVE option is the number of days of inactivity. A user whose account is locked must contact the system administrator before being able to use the system again. Passing the number -1 as the INACTIVE will remove an account's inactivity.
+
+  * `info`
+    Show account aging information.
+
+  * `mindays` MIN_DAYS
+    Set the minimum number of days between password changes to MIN_DAYS. A value of zero for this field indicates that the user may change his/her password at any time.
+
+  * `maxdays` MAX_DAYS
+    Set the maximum number of days during which a password is valid. When MAX_DAYS plus LAST_DAY is less than the current day, the user will be required to change his/her password before being able to use his/her account. This occurrence can be planned for in advance by use of the -W option, which provides the user with advance warning. Passing the number -1 as MAX_DAYS will remove checking a password's validity.
+
+  * `warndays` WARN_DAYS
+    Set the number of days of warning before a password change is required. The WARN_DAYS option is the number of days prior to the password expiring that a user will be warned his/her password is about to expire.
+
 * linuxUser.removeUser(username, callback)
 	* username String
 	* callback function(err)
