@@ -233,7 +233,7 @@ console.log(user);
     maxDays: 99999,
     warnDays: 7
   }
-```
+  ```
 
 * linuxUser.setExpiration(config, callback)
   
@@ -261,6 +261,10 @@ console.log(user);
     A user whose account is locked must contact the system administrator before
     being able to use the system again. Passing the number -1 as the INACTIVE
     will remove an account's inactivity.
+
+    ** `lastday`, `expiredate`, and `inactive` can be set as a String of days
+    since January 1st, 1970, or formatted YYYY-MM-DD or a native Date object.
+
 
   * `minDays` MIN_DAYS
     Set the minimum number of days between password changes to MIN_DAYS. A value
