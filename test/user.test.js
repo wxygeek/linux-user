@@ -1,3 +1,4 @@
+
 'use strict';
 
 require('should')
@@ -10,6 +11,8 @@ var testPassword = 'linuxPasswordTest';
 var testGroupname = 'linuxgrouptest';
 var testSSHKeyGood = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBqDmHHhV9HHCY0Rvp6by4N1aBsnjreWKIPaO2UHCURzJk8Sa92jXEfNXpQ1H36yJmirCB+q6XRCKq27ah5M86fCKsm+UfbPlD/X81YH+RnnYgGyh7nwk+llvLKdrzFnF7aHG5/WShj5YUzZO9McIPxyrU1GmMnxEynHp4qSsnmKNJZT2KtpGlP/cvOktNjRWO1hAY8mXG9VShSpqLYWU/AbTV4hZZ2Pr/FdRZq59oRcm9ZGfd13ZMJcPlfhTCeslJfWNx2cuMTSLXRN76MtCmWsPKuVNY6Hj/ILL7JQe8DIxu9AAMiUqFadfFHRGO9dzCh8fKi5lpSMsDKqHHysb504p2ogHDzOUpc/remX3exnvDK1245JXYlNtUkXIexVl+u871PDNbOhx4lSa1nGJGiJCJLW7FlL5mEPrvlgeWaxGihi66redtcPWGVuy2dYytYoI8JanpGlEGFkTOIaKSvDH0ratOxRSlP/Eraxs7w3uVaRvF7/iC348CI63l7T8= william@william-HP-ENVY-x360-Convertible';
 var testSSHkeyBad = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBqDmHHhV9HHCY0Rvp6by4N1aBsnjreWKIPaO2UHCURzJk8Sa92jXEfNXpQ1H36yJmirCB+q6XRCKq27ah5M86fCKsm+UfbPlD/X81YH+RnnYgGyh7nwk+llvLKdrzFnF7aHG5/WShj5YUzZO9McIPxyrU1GmMnxEynHp4qSsnmKNJZT2KtpGlP/cvOktNjRWO1hAY8mXG9VShSpqLYWU/AbTV4hZZ2Pr/FdRZq59oRcm9ZGfd13ZMJcPlfhTCeslJfWNx2cuMTSLXRN76MtCmWsPKuVNY6Hj/ILL7JQe8DIxu9AAMiUqFadfFHRGO9dzCh8fKi5lpSMsDKqHHysb504p2ogHDzOUpc/remX3exnvDK1245JXYlNtUkXIexVl+u871PDNbOhx4lSa1nGJGiJCJLW7FlL5mEPrvlgeWaxGihi66redtcPWGVuy2ytYoI8JanpGlEGFkTOKSvDH0ratOxRSlP/axs7w3uVaRvF7/iC348CI63l7T8= william@william-HP-ENVY-x360-Convertible'
+
+
 
 describe('user.js', function () {
   describe('validateUsername', function () {
@@ -88,6 +91,64 @@ describe('user.js', function () {
         });
       });
     });
+  });
+
+  describe('Expiration', function () {
+    before(function(done){
+      linuxUser.addUser({username: testUsername}, done);
+    })
+
+    after(function(done){
+      linuxUser.removeUser(testUsername, done);
+    })
+
+    it('Set user expiration maxDays', function(done){
+      linuxUser.setExpiration(testUsername, {maxDays: 50}, function(err, data){
+        if(err) return done(err);
+
+        linuxUser.getExpiration(testUsername, function (err, data) {
+          if(err) {
+            return done(err);
+          }
+
+          data.maxDays.should.equal(50);
+          done();
+        });
+      })
+    });
+
+    it('Set user expiration date via string', function(done){
+      let date = '2012-04-04';
+      linuxUser.setExpiration(testUsername, {expiredate: date}, function(err, data){
+        if(err) return done(err);
+
+        linuxUser.getExpiration(testUsername, function (err, data) {
+          if(err) {
+            return done(err);
+          }
+
+          data.accountExpires.toISOString().slice(0,10).should.equal(date);
+          done();
+        });
+      })
+    });
+
+    it('Set user expiration date via date object', function(done){
+      let date = new Date();
+      linuxUser.setExpiration(testUsername, {expiredate: date}, function(err, data){
+        if(err) return done(err);
+
+        linuxUser.getExpiration(testUsername, function (err, data) {
+          if(err) {
+            return done(err);
+          }
+
+          data.accountExpires.toISOString().slice(0,10).should.equal(date.toISOString().slice(0,10));
+          done();
+        });
+      })
+    });
+
   });
 
   describe('addUser options', function (){
