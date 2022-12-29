@@ -7,7 +7,7 @@ if(process.platform !== 'linux') {
 
 // ensure process is running as root
 if(!(process.getuid && process.getuid() === 0)) {
-	throw new Error('linux-user must be running as root user');
+	console.warn('linux-user is NOT running as root, some functions may not work!');
 }
 
 var lib = require('./lib/user');
