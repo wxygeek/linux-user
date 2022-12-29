@@ -18,6 +18,10 @@ This is a fork of [wxygeek](https://github.com/wxygeek) abandoned [linux-user](h
 
 `$ npm install linux-sys-user --save`
 
+Most of the functions require privileged(root) access. The methods that
+simply return information will work, as well as the methods that only work on
+current user will also work with out root. 
+
 
 ## Testing
 
@@ -262,8 +266,8 @@ console.log(user);
     being able to use the system again. Passing the number -1 as the INACTIVE
     will remove an account's inactivity.
 
-    ** `lastday`, `expiredate`, and `inactive` can be set as a String of days
-    since January 1st, 1970, or formatted YYYY-MM-DD or a native Date object.
+    **`lastday`, `expiredate`, and `inactive` can be set as a String of days
+    since January 1st, 1970, or formatted YYYY-MM-DD or a native Date object.**
 
 
   * `minDays` MIN_DAYS
