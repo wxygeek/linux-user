@@ -1,11 +1,17 @@
 {
-  "name": "linux-user",
-  "version": "0.1.0",
+  "name": "linux-sys-user",
+  "version": "1.1.7",
   "description": "Node module for Linux user and group control.",
-  "author": {
-    "name": "GKuChan",
-    "email": "gkuchan_root@outlook.com"
-  },
+  "author": [
+    {
+      "name": "William Mantly",
+      "email": "wmantly@gmail.com"
+    },
+    {
+      "name": "GKuChan",
+      "email": "gkuchan_root@outlook.com"
+    }
+  ],
   "keywords": [
     "linux",
     "user",
@@ -18,21 +24,25 @@
     "groupadd",
     "groupmod",
     "groupdel",
-    "gpasswd"
+    "gpasswd",
+    "pam",
+    "ssh-keygen",
+    "ssh",
+    "keys"
   ],
+  "scripts": {
+    "test": "mocha",
+    "test-coverage": "nyc mocha"
+  },
   "devDependencies": {
-    "istanbul": "^0.3.5",
-    "jshint": "^2.5.11",
-    "mocha": "^2.1.0",
-    "should": "^4.4.1"
+    "jshint": "^2.13.4",
+    "mocha": "^9.2.2",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:GKuChan/linux-user.git"
-  },
-  "dependencies": {
-    "is-root": "^1.0.0",
-    "lru-cache": "^2.5.0"
+    "url": "https://github.com/wmantly/linux-user.git"
   }
 }
